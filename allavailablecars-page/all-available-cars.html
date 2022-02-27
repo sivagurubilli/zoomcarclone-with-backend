@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>all-available-cars</title>
+    <link rel="stylesheet" href= "availablecars1.css">
+</head>
+  
+
+<body>
+    <!--city selection start-->
+    <div class ="city-box">
+        <div id ="city-box1">
+                <div class="title">Select your country && city</div>
+<div class="dropdownbox">
+    <div>
+        <select name ="select_country" id ="selectcountry">
+            <option value ="">Select country</option>
+        <option value ="india">india</option>
+        </select>
+    </div>
+<div>
+<select name ="selected_city" id ="selected_city" onchange="confirm()">
+    <option value ="select_city">select city</option>
+<option value ="Bangalore">Bangalore</option>
+<option value ="Pune">pune</option>
+<option value="Delhi">Delhi NCR</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Patna">Patna</option>
+</select>
+
+</div>
+</div>
+<button disabled="disabled" class="city-box-btn" onclick="confirmcity()">Confirm</button>
+              
+</div>
+    </div>
+
+
+
+<!--navbar start-->
+<div class="header" id ="header">
+  
+    <div><img src="https://www.clipartmax.com/png/middle/36-365828_navbar-toggle-icon-menu-hamburger-png-white.png"   id ="ham"  onclick="showsidebar()" ></div>
+   
+    <div><img src ="https://www.zoomcar.com/build/98e56e8b0b91e8806885a22ac2bf69a7.png" id ="nav_logo"></div>
+    <div id ="nav">
+     <ul>
+<a href = "/zoomcar/host.html">Become a host</a>
+<a href ="/ZMS/main.html">ZMS</a>
+
+<a href ="/zoomcar/signup.html"  id ="user_not_login">
+    <li id ="login"></li>
+</a>
+<li id ="user">
+    <a href ="#" id ="nav_name"></a>
+    <i class ="icon-user"></i>
+</li>
+
+        </ul>
+    </div>
+</div>
+
+<!--navbar end-->
+
+<div id ="body1">
+<div id ="sidebox">
+<div class ="filter_kms">
+    <p>Free kms</p>
+    <div class="filter_items">
+<button onclick ="ninty()" class="filter_list">90</button>
+<button onclick="onetwenty()" class="filter_list">120</button>
+    </div>
+
+</div>
+<div class ="filter_fuel">
+<p>Fuel type</p>
+    <div class ="filter_items">
+        <button onclick="deiselcar()" id ="filter5">Deisel</button>
+        <button onclick="petrolcar()" id ="filter6">Petrol</button>
+
+    </div>
+
+</div>
+
+
+<div class ="filter_seats">
+<p>Seats</p>
+    <div class ="filter_items">
+    
+    <button onclick="five()" id ="filter5">5</button>
+    <button onclick="six()" id ="filter6">6</button>
+    <button onclick="seven()" id ="filter7">7</button>
+</div>
+</div>
+<div class ="filter_cartype">
+<p>Car Types</p>
+    <div class ="filter_items">
+        <button onclick="hatchbackcar()" id ="hatch">Hatchback</button>
+        <button onclick="sedancar()" id ="sedan">Sedan</button>
+
+    </div>
+</div>
+
+<div class ="filter_delivery">
+<p>Delivery Type</p>
+    <div class ="filter_items">
+    <button onclick="Homecar()" class ="homedel">Home Delivery</button>
+    <button onclick="Airportcar()" class ="airportdel">Airport Delivery</button>
+</div>
+
+</div>
+</div>
+<div id="maincont">
+<div id ="addressbox"></div>
+<div id ="datebox">
+    <span class="date1"></span>
+    <span class="date2">→ </span>
+    <span class="date3"></span>
+</div>
+
+
+<div id ="delivery">
+<div class="icon1"><img src ="https://s3-ap-southeast-1.amazonaws.com/zoomcar/images/original/976c02875a91f8e252ab53c09f8f30b22ae0e905.png?1595735439"</div>
+</div>
+
+<div class ="delivery1">
+    <div class="card_heading">
+        Get Home Delivery starting at just  ₹ 49
+    </div>
+    <div class ="card_heading1">
+        Dont want to go for pick-up? Select Home Delivery on the next step
+    </div>
+</div>
+</div>
+<!--main cars cont-->
+<div id ="cont">
+    
+</div>
+</div>
+
+
+<div class ="sidebarbox">
+    <div class="sidebar-ovl">⭐</div>
+
+    <div class="sidebar">
+
+        <div class ="list">
+            <a href="#" class="changecity" onclick="changecity()">🧑🏾‍🍳Select city</a>
+            <a href="#" class="changecity1"> </a>
+        </div>
+
+<div class ="list1">
+        <a window.location.href="./zoomcar/signup.html" class="signin">  ✍  Login or Signup</a>
+    </div>
+    
+        <h3 id ="side_name"> 👩‍🎓  siva</h3>
+    <h3 id ="side_email"> ✉   gurubillisiva22@gmail.com</h3>
+    <h3 id ="side_phone"> ☎   8309795495</h3>
+
+    
+    <h3 class=""policies> 📝   policies</h3>
+    <h3 class ="help"> 🙏🏻  Help&support</h3>
+    <div class="logout" onclick="logout()"> 👨🏼‍💻  Logout</div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+<script src ="all-available-cars.js"></script>

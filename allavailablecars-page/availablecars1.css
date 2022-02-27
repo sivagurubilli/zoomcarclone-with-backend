@@ -1,0 +1,470 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    
+}
+
+
+/* city-selection-start */
+a{
+    text-decoration: none;
+    color: white;
+}
+.city-box{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    transition: all .2s;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.87);
+    z-index: 999;
+    display: none;
+}
+
+
+
+@media screen and (min-width:1140px) {
+    .city-box .drapdownbox{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+}
+
+.city-box .drapdownbox>div{
+    max-width: 328px;
+    width: 100%;
+    margin: 0 30px;
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 5px;
+
+}
+
+.city-box .drapdownbox>div select{
+    float: right;
+    width: 100%;
+    padding: 15px;
+    color: #35495e;
+    border: none;
+    outline: none;
+    
+}
+
+option{
+    width: 100%;
+    padding: 25px;
+}
+
+/* button cars div*/
+.city-box-btn{
+    max-width: 328px;
+    width: 100%;
+    margin: auto;
+    margin-top: 83px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: 0.8px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #10a310;
+    display: block;
+    border: none;
+}
+
+.city-box-btn[disabled]{
+    background-color: #e0e0e0;
+    color: #a8a8a8;
+    border-color: #e0e0e0;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+/* nav bar start */
+.header{
+
+height: 60px;
+    padding: 16px;
+    background-color: #000;
+    color:white;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+}
+#nav_logo{
+    margin-left: 20px;
+    height: 30px;
+}
+
+#ham{
+    width: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    color: white;
+}
+.header>div:nth-child(2){
+    padding-left: 10px;
+    flex-grow: 9;
+}
+.header>div:nth-child(3){
+    flex-grow: 1;
+}
+
+.header>#nav>ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    font-size: 16px;
+    gap:80px;
+    align-items: center;
+}
+header>#nav>ul>li{
+    margin: auto;
+    cursor: pointer;
+}
+
+.icon-user{
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+@media  screen and (width:520px) {
+    #nav{
+        width: 300px;
+    }
+    .header>#nav>ul{
+        gap:10px;
+
+        
+    }
+    
+}
+
+/* navbar ending */
+
+body{
+    background-color: whitesmoke;
+}
+
+#body1{
+    display: flex;
+    height: auto;
+   
+  
+   
+}
+/* side box*/
+#sidebox{
+    width: 20%;
+    margin-top: 100px;
+    margin-left: 100px;
+    border: 1px solid green;
+    background-color:lavender;
+   
+}
+
+#sidebox p{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+#maincont{
+    width: 70%;
+    margin: 20px 20px 20px 20px;
+    margin-top: 100px;
+    
+}
+/* address box */
+#addressbox{
+    margin-top: 16px;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    background-color: rgb(255, 254, 254);
+    border: 1px solid rgb(19, 228, 12);
+    padding: 8px;
+
+}
+/* date box on top side*/
+#datebox{
+    margin-top: 10px;
+    display:inline-block;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 254, 254);
+    border: 1px solid rgb(19, 228, 12);
+    padding: 8px;
+  
+
+}
+.date1{
+    margin-left: 10px;
+    font-size: 16px;
+    color: black;
+}
+.date2{
+    margin-top: 10px;
+    margin-left: 50px;
+    text-align: center;
+}
+.date3{
+    margin-top: 10px;
+    margin-left: 200px;
+    text-align: center;
+}
+/* top 3rd box */
+#delivery{
+display :grid;
+grid-template-columns: 10% 80%;
+width: 100%;
+margin-top: 16px;
+height: 80px;
+border-radius: 4px;
+background-color: white;
+border:1px solid rgb(221, 221, 221)
+}
+
+.icon1>img{
+    margin-top: 20px;
+    padding-left: 25px;
+    width: 50px;
+    height: 30px;
+}
+.delivery1{
+    margin-top: 20px;
+}
+.card_heading{
+    font: size 14px;
+    color:1f1f1f;
+    margin-bottom: 4px;
+}
+.card_heading1{
+    font-size: 11px;
+    padding-top: 4px;
+    color:#a8a8a8;
+    letter-spacing: 0.4px;
+}
+/* filtering boxe*/
+
+.filter_kms{
+   height: 100px;
+  
+  
+}
+/*filterin items box*/
+
+.filter_items{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+   background-color: gray;
+    display: flex;
+}
+.filter_list{
+    margin: 10px 10px;
+    height: 30px;
+    width: 80px;
+}
+/*filter by furl*/
+.filter_items_fuel{
+    width: 80px;
+    height: 30px;
+    margin: 10px 10px;
+}
+/* filtering by seats */
+
+#filter5,#filter6,#filter7{
+    margin-top:10px;
+    height: 30px;
+    width: 80px;
+    margin: 10px 10px;
+}
+button:hover{
+    background-color: green;
+    cursor: pointer;
+}
+#hatch,#sedan{
+    height: 30px;
+width:100px;
+margin: 10px 10px;
+}
+
+.homedel,.airportdel{
+    height: 30px;
+    width:100px;
+    margin: 10px 10px;
+}
+
+/* cars container*/
+#cont{
+    height: 500px;
+    width:100%;
+    margin-top: 16px;
+   
+}
+#cont #image{
+    width:180px;
+    height: 160px;
+}
+#cont>div{
+    margin:10px;
+    border: 1px solid rgb(211,207,207);
+    display: flex;
+    gap: 10px;
+    background-color: white;
+}
+#cont>div>h3{
+    margin-right: 30px;
+}
+
+/* book now button styling*/
+#cont>div>h3>button{
+    width: 120px;
+    height: 40px;
+    color:rgb(19,19,22);
+    border-radius: 4px;
+    border: 1px solid rgb(98,243,53);
+    margin-top:70px;
+}
+#cont>div>p{
+    width: 650px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+#cont>div>p>p{
+    margin: 5px;
+    font-size: 14px;
+}
+#center{
+    margin-left: 50px;
+    margin-top: 5px;
+}
+#price{
+    margin-top: 20px;
+}
+#btn{
+ background-color: #10a310;
+}
+
+/*sidebar when click on ham*/
+.sidebarbox{
+margin-top: 60px;
+    position:fixed;
+    width: 300px;
+    height: 400px;
+    display: none;
+    z-index: 10;
+    background-color: grey;
+    border: 1px solid grey;
+
+}
+.sidebar-ovl{
+    position: absolute;
+    height: 7%;
+    background: rgba(0,0,0,0.6);
+    will-change: opacity;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+
+}
+.sidebar{
+    
+    width: 100%;
+    height: 400px;
+   margin-left: 2px;
+   margin-top: 30px;
+}
+
+.sidebar h3{
+color:white;
+margin-top: 20px;
+font-size: 16px;
+margin-left: 10px;
+}
+.list,.list1{
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+
+}
+.changecity1{
+ margin-left: 20px;
+color: pink;
+ width: 100px;
+
+}
+.logout{
+    color:white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#selected_city,#selectcountry{
+    height: 30px;
+    width: 200px;
+    margin-left: 20px;
+}
+
+.dropdownbox{
+    display: flex;
+height: 80px;
+width: 200px;
+margin-top: 10px;
+margin-left: 30px;
+}
+.dropdownbox option,select{
+ font-size: 24px;
+ font-weight: bold;
+}
+.city-box{
+    height: 100%;
+    width:100%;
+
+background-color: aqua;
+}
+#city-box1{
+    height: 40%;
+    width: 40%;
+    border: 1px solid red;
+    background-color: #35495e;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+.city-box-btn{
+    margin-left:200px;
+    height: 40px;
+    width: 150px;
+    margin-top: -10px;
+    background-color: yellowgreen;
+}
+.title{
+    margin-top: 40px;
+    margin-left: 120px;
+    color: beige;
+}
+#head{
+    font-size: 28px;
+margin-left: 30px;
+
+}
+
+#image1{
+    height: 400px;
+}

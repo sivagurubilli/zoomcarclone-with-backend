@@ -1,0 +1,38 @@
+h2{
+    margin-left: 45%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#main{
+    width: 80%;
+    margin: auto;
+}
+#heading{
+    display: flex;
+    justify-content: space-around;
+}
+h2{
+    margin-left: 45%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#heading{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#heading>div:nth-child(3){
+    color: green;
+}
+h3{
+    text-align: center;
+    margin-top: 2%;
+    text-decoration: underline;
+}
+h4,p{
+    text-align: justify;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+span{
+    font-weight: bolder;
+}

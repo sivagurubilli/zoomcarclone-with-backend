@@ -4,6 +4,35 @@
     let nav = document.getElementById("navbar");
     nav.innerHTML = navbar();    
 
+
+    
+let a=JSON.parse(localStorage.getItem("loginpersonname"))
+let b=JSON.parse(localStorage.getItem("userdata"))
+document.querySelector("h4").append(a)
+let count=0
+let details=()=>{
+ count++
+b.map(function(el){
+  
+    document.querySelector("#login").innerHTML=""
+ 
+    let p=document.createElement("p")
+    p.textContent=el.name
+    let p2=document.createElement("p")
+    p2.textContent=el.number
+    let p3=document.createElement("p")
+    p3.textContent=el.email
+    document.querySelector("#login").append(p,p2,p3)
+    if(count%2!=0){
+        document.querySelector("#login").style.display="block"
+    }
+    else{
+        document.querySelector("#login").style.display="none"
+    }
+})
+    
+}
+
     var carData = JSON.parse(localStorage.getItem("cars"));
     console.log(carData);
 

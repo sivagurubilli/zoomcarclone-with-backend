@@ -22,9 +22,39 @@ if(JSON.parse(localStorage.getItem("trip"))[0]=="round"){
 }
 */
 
+let url = `http://localhost:2000/allcars`;
 
+async function FetchApi(url){
+try{
+    let res = await fetch(url);
+    let data = await res.json();
+  getcity(data)
+}catch(err){
+    console.log(err)
+}
+}
+
+FetchApi(url)
 
 let city =JSON.parse(localStorage.getItem("city"))
+
+ function getcity(data){
+    let carsbycity  =[]
+    data.forEach(elem=>{
+        
+       if(elem.City== city){
+        carsbycity.push(elem)
+       
+       }
+
+    })
+    showdata(carsbycity)
+       console.log(carsbycity)
+}
+
+
+
+
 let changecity1 = document.querySelector(".changecity1");
 
 changecity1.innerText=  city;
@@ -46,20 +76,10 @@ let endDate = JSON.parse(localStorage.getItem("date"));
 
 date3.innerText = "End-time:" + " " + endDate;
 
-function getdata(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-
-    let city =JSON.parse(localStorage.getItem("city"))
-    
-    showdata(carsdata[city])
-}
-getdata();
-
-
 
 function showdata(carsdata1){
 
-    if(carsdata1==undefined){
+    if(carsdata1==undefined||[]){
         let image1 =document.createElement('img')
 image1.id="image1"
 image1.src ="https://img1.zoomcar.com/images/original/9a0a4bf46735e3565ed7f4451087c8c71acf4bd2.png?1607931267"
@@ -123,7 +143,6 @@ cont.append(div)
 
 }
 
-var carsdata = JSON.parse(localStorage.getItem("cars"))
 
 
 function ninty(){
@@ -339,7 +358,7 @@ function changecity(){
 
 
 
-// function  when clicking on ham side bar will appear 
+// function  when clicking on ham, side bar will appear 
 
 function showsidebar(){
     let sidebarbox =document.querySelector(".sidebarbox");

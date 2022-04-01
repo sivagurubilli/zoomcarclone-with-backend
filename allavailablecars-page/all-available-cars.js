@@ -22,6 +22,8 @@ if(JSON.parse(localStorage.getItem("trip"))[0]=="round"){
 }
 */
 
+//const { post } = require("../backend-zoomcar/controllers/car.controller");
+
 let url = `http://localhost:2000/allcars`;
 
 async function FetchApi(url){
@@ -53,9 +55,6 @@ let city =JSON.parse(localStorage.getItem("city"))
        
 }
 
-
-
-
 let changecity1 = document.querySelector(".changecity1");
 
 changecity1.innerText=  city;
@@ -67,8 +66,6 @@ const today = new Date(timeElapsed);
 today.toDateString();
 
 let date2 =document.querySelector(".date1")
-let startDate = JSON.parse(localStorage.getItem("date"));
-//startDate = startDate[0] + " " + startDate[1];
 
 date2.innerText = "Start-time:" + " " + today;
 
@@ -371,15 +368,47 @@ function five(){
 
   // car filtering functions compleated based on user preferences
 
+let url1 = `http://localhost:2000/checkpost`
 
 
-if(localStorage.getItem("carShow")== null) {
-localStorage.setItem("carshow",JSON.stringify([]));
+
+const   bookfetchapi=async(car)=>{
+    
+    try{
+const res = await fetch(url1,{
+    method:"POST",
+    headers:{
+        "Content-Type": "application/json",
+        "Access-Control-Allow-origin":"*"
+       
+    },
+    body:JSON.stringify({
+        
+        City:car.City,
+        location:car.location,
+        name:car.name,
+        price:car.price,
+        fuel:car.fuel,
+        seater:car.Seater,
+        type:car.type,
+        Rating:car.Rating,
+        img:car.img
+    })
+})
+const data = await res.json()
+console.log(data)
+    }catch(err){
+        console.log(err)
+    }
 }
 
+
+
 function addtoBook(car) {
-    localStorage.setItem("carshow",JSON.stringify(car));
-    window.location.href = "../first.html"
+    
+    bookfetchapi(car)
+
+ //window.location.href = "../first.html"
 }
 
 
@@ -459,4 +488,10 @@ var login =document.getElementById("login")
 let a=JSON.parse(localStorage.getItem("loginpersonname"))
 
 login.append(a)
+
+
+
+
+
+
 

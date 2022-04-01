@@ -42,14 +42,15 @@ let city =JSON.parse(localStorage.getItem("city"))
     let carsbycity  =[]
     data.forEach(elem=>{
         
-       if(elem.City== city){
+       if(elem.City=="Pune"){
         carsbycity.push(elem)
-       
+        
        }
 
     })
     showdata(carsbycity)
-       console.log(carsbycity)
+    //console.log(carsbycity)
+       
 }
 
 
@@ -77,9 +78,10 @@ let endDate = JSON.parse(localStorage.getItem("date"));
 date3.innerText = "End-time:" + " " + endDate;
 
 
-function showdata(carsdata1){
-
-    if(carsdata1==undefined||[]){
+function showdata(carsbycity){
+    
+    if(carsbycity.length < 1){
+        
         let image1 =document.createElement('img')
 image1.id="image1"
 image1.src ="https://img1.zoomcar.com/images/original/9a0a4bf46735e3565ed7f4451087c8c71acf4bd2.png?1607931267"
@@ -87,13 +89,11 @@ var head =document.createElement("p")
 head.id ="head"
 head.innerText ="NO cars matched for your search critiria  && we are offering services in limited cities refer ZMS "
         cont.append(image1,head)
-    }else{
-
-   cont.innerHTML=null
-carsdata1.forEach(function(car){
+    }else if(carsbycity.length > 0){
+       
+   cont.innerHTML= null
    
-
-
+carsbycity.forEach(car=>{
     let div =document.createElement('div')
 let image =document.createElement('img')
 image.id="image"
@@ -146,183 +146,240 @@ cont.append(div)
 
 
 function ninty(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var ninty1=[];
-
-    //document.getElementsByClassName("filter_list").style.backgroundColor = "green";
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e) =>{
-        if(e.Seater == 5){
+   
+    
+   async function ApiFetch(url){
+       try{
+        var ninty1=[];
+let res = await fetch(url)
+let data =await res.json()
+    data.forEach((e) =>{
+        if(e.Seater == 5 && e.City == "Pune"){
             ninty1.push(e)
         }
     });
-    
     showdata(ninty1);
-    
+   }catch(err){
+       console.log(err)
+   }
+}
+ApiFetch(url)
 }
 
 function onetwenty(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var onetwenty1 =[];
-
-  //  document.getElementsByClassName("filter_list").style.backgroundColor = "green";
-  let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e) =>{
-        if(e.Seater == 6){
-            onetwenty1.push(e)
-        }
-    });
-    showdata(onetwenty1);
-}
-
-
-
-
-
-function five(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var fiveSeater = [];
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e) =>{
- if(e.Seater==5){
-     fiveSeater.push(e)
+   async function ApiFetch(url){
+        try{
+         var onetwenty1=[];
+ let res = await fetch(url)
+ let data =await res.json()
+     data.forEach((e) =>{
+         if(e.Seater == 7 && e.City == "Pune"){
+             onetwenty1.push(e)
+         }
+     });
+     showdata(onetwenty1);
+    }catch(err){
+        console.log(err)
+    }
  }
-    });
-showdata(fiveSeater)
-}
-
-
-function seven(){
-    var sevenSeater =[];
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-  
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e) =>{
- if(e.Seater==7){
-     sevenSeater.push(e)
+ ApiFetch(url)
  }
-    });
-showdata(sevenSeater)
-}
-
-function six(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var sixSeater = [];
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e) =>{
- if(e.Seater==6){
-     sixSeater.push(e)
- }
-    });
-showdata(sixSeater)
-}
-
-
-
-
-function deiselcar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var deisel =[]
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e)=>{
-        if(e.fuel=="Diesel"){
-            deisel.push(e)
-        }
-    });
-    showdata(deisel)
-
-}
-
-function petrolcar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var petrol =[]
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e)=>{
-        if(e.fuel=="Petrol"){
-            petrol.push(e)
-        }
-    });
-    showdata(petrol)
-
-}
-
-
-
-function hatchbackcar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var hatchback =[];
-    let city =JSON.parse(localStorage.getItem("city"))
-
-    let select_cars = carsdata[city];
-    select_cars.forEach((e)=>{
-        if(e.Seater==6||e.Seater==7){
-            hatchback.push(e)
-        }
-    });
-    showdata(hatchback)
-
-}
-
-
-function sedancar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var sedan =[];
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars = carsdata[city];
-    select_cars.forEach((e)=>{
-        if(e.Seater==5){
-            sedan.push(e)
-        }
-    });
-    showdata(sedan)
-
-}
-
-
-  
-function Homecar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
-    var home =[]
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars=carsdata[city];
-    select_cars.forEach((e)=>{
-if(e.type=="homecar"){
-    home.push(e)
-}
-    });
-    showdata(home)
-}
  
-function Airportcar(){
-    var carsdata = JSON.parse(localStorage.getItem("cars"))
 
-    var airport =[]
-    let city =JSON.parse(localStorage.getItem("city"))
-    let select_cars=carsdata[city];
-    select_cars.forEach((e)=>{
-if(e.type=="airportcar"){
-    airport.push(e)
-}
-    });
-    showdata(airport)
-}
+
+ 
+function five(){
+    async function ApiFetch(url){
+         try{
+          var five1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.Seater == 5 && e.City == "Pune"){
+              five1.push(e)
+          }
+      });
+      showdata(five1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+
+
+  function seven(){
+    async function ApiFetch(url){
+         try{
+          var seven1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.Seater == 7 && e.City == "Pune"){
+              seven1.push(e)
+          }
+      });
+      showdata(seven1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+  function six(){
+    async function ApiFetch(url){
+         try{
+          var six1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.Seater == 6 && e.City == "Pune"){
+              six1.push(e)
+          }
+      });
+      showdata(six1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+  function deiselcar(){
+    async function ApiFetch(url){
+         try{
+          var deiselcar1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.fuel == "Diesel" && e.City == "Pune"){
+              deiselcar1.push(e)
+          }
+      });
+      showdata(deiselcar1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+
+  function petrolcar(){
+    async function ApiFetch(url){
+         try{
+          var petrolcar1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.fuel == "Petrol" && e.City == "Pune"){
+              petrolcar1.push(e)
+          }
+      });
+      showdata(petrolcar1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+
+
+
+  function hatchbackcar(){
+    async function ApiFetch(url){
+         try{
+          var hatch1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if((e.Seater == 7 ||e.Seater == 6)&& e.City == "Pune"){
+              hatch1.push(e)
+          }
+      });
+      showdata(hatch1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+
+  function sedancar(){
+    async function ApiFetch(url){
+         try{
+          var sedan1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.Seater == 5 && e.City == "Pune"){
+              sedan1.push(e)
+          }
+      });
+      showdata(sedan1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+  
+
+  function Homecar(){
+    async function ApiFetch(url){
+         try{
+          var home1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.type == "homecar" && e.City == "Delhi"){
+              home1.push(e)
+          }
+      });
+      showdata(home1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+ 
+
+  function Airportcar(){
+    async function ApiFetch(url){
+         try{
+          var air1=[];
+  let res = await fetch(url)
+  let data =await res.json()
+      data.forEach((e) =>{
+          if(e.type == "airportcar" && e.City == "Pune"){
+              air1.push(e)
+          }
+      });
+      showdata(air1);
+     }catch(err){
+         console.log(err)
+     }
+  }
+  ApiFetch(url)
+  }
+
+  // car filtering functions compleated based on user preferences
+
+
 
 if(localStorage.getItem("carShow")== null) {
 localStorage.setItem("carshow",JSON.stringify([]));
-
-
 }
 
 function addtoBook(car) {
     localStorage.setItem("carshow",JSON.stringify(car));
-    window.location.href = "first.html"
+    window.location.href = "../first.html"
 }
 
 
@@ -402,3 +459,4 @@ var login =document.getElementById("login")
 let a=JSON.parse(localStorage.getItem("loginpersonname"))
 
 login.append(a)
+

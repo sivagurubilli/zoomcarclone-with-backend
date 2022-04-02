@@ -24,13 +24,17 @@ if(JSON.parse(localStorage.getItem("trip"))[0]=="round"){
 
 //const { post } = require("../backend-zoomcar/controllers/car.controller");
 
-let url = `http://localhost:2000/allcars`;
+let url = `http://ec2-34-209-50-160.us-west-2.compute.amazonaws.com:2000/allcars`;
 
-async function FetchApi(url){
+let url3 = "http://localhost:2000/allcars"
+
+async function FetchApi(){
 try{
-    let res = await fetch(url);
+    let res = await fetch(url3);
     let data = await res.json();
+   
   getcity(data)
+
 }catch(err){
     console.log(err)
 }
@@ -44,7 +48,7 @@ let city =JSON.parse(localStorage.getItem("city"))
     let carsbycity  =[]
     data.forEach(elem=>{
         
-       if(elem.City=="Pune"){
+       if(elem.City==city){
         carsbycity.push(elem)
         
        }
@@ -151,7 +155,7 @@ function ninty(){
 let res = await fetch(url)
 let data =await res.json()
     data.forEach((e) =>{
-        if(e.Seater == 5 && e.City == "Pune"){
+        if(e.Seater == 5 && e.City == city){
             ninty1.push(e)
         }
     });
@@ -170,7 +174,7 @@ function onetwenty(){
  let res = await fetch(url)
  let data =await res.json()
      data.forEach((e) =>{
-         if(e.Seater == 7 && e.City == "Pune"){
+         if(e.Seater == 7 && e.City == city){
              onetwenty1.push(e)
          }
      });
@@ -192,7 +196,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.Seater == 5 && e.City == "Pune"){
+          if(e.Seater == 5 && e.City == city){
               five1.push(e)
           }
       });
@@ -213,7 +217,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.Seater == 7 && e.City == "Pune"){
+          if(e.Seater == 7 && e.City == city){
               seven1.push(e)
           }
       });
@@ -232,7 +236,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.Seater == 6 && e.City == "Pune"){
+          if(e.Seater == 6 && e.City == city){
               six1.push(e)
           }
       });
@@ -251,7 +255,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.fuel == "Diesel" && e.City == "Pune"){
+          if(e.fuel == "Diesel" && e.City == city){
               deiselcar1.push(e)
           }
       });
@@ -271,7 +275,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.fuel == "Petrol" && e.City == "Pune"){
+          if(e.fuel == "Petrol" && e.City == city){
               petrolcar1.push(e)
           }
       });
@@ -293,7 +297,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if((e.Seater == 7 ||e.Seater == 6)&& e.City == "Pune"){
+          if((e.Seater == 7 ||e.Seater == 6)&& e.City == city){
               hatch1.push(e)
           }
       });
@@ -313,7 +317,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.Seater == 5 && e.City == "Pune"){
+          if(e.Seater == 5 && e.City == city){
               sedan1.push(e)
           }
       });
@@ -334,7 +338,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.type == "homecar" && e.City == "Delhi"){
+          if(e.type == "homecar" && e.City == city){
               home1.push(e)
           }
       });
@@ -354,7 +358,7 @@ function five(){
   let res = await fetch(url)
   let data =await res.json()
       data.forEach((e) =>{
-          if(e.type == "airportcar" && e.City == "Pune"){
+          if(e.type == "airportcar" && e.City == city){
               air1.push(e)
           }
       });
@@ -368,14 +372,14 @@ function five(){
 
   // car filtering functions compleated based on user preferences
 
-let url1 = `http://localhost:2000/checkpost`
+let url1 = `http://ec2-34-209-50-160.us-west-2.compute.amazonaws.com:2000/checkpost`
 
-
+let url2 = `http://localhost:2000/checkpost`
 
 const   bookfetchapi=async(car)=>{
     
     try{
-const res = await fetch(url1,{
+const res = await fetch(url2,{
     method:"POST",
     headers:{
         "Content-Type": "application/json",
@@ -408,7 +412,7 @@ function addtoBook(car) {
     
     bookfetchapi(car)
 
- //window.location.href = "../first.html"
+ window.location.href = "../first.html"
 }
 
 
@@ -483,11 +487,7 @@ function logout(){
 }
 
 
-var login =document.getElementById("login")
 
-let a=JSON.parse(localStorage.getItem("loginpersonname"))
-
-login.append(a)
 
 
 

@@ -242,8 +242,30 @@ class="d-flex pt-2">  <p><img width="25px" height="25px" src="https://zoomcar-as
     // console.log(dispric)
     var price = document.querySelector("#price")
 
-var cardata = JSON.parse(localStorage.getItem("carsDetails"))
-console.log(cardata)
+      
+    var cardata = JSON.parse(localStorage.getItem("carsDetails"))
+    let url = `http://ec2-34-209-50-160.us-west-2.compute.amazonaws.com:2000/checkpost`
+
+    let url4 = `http://localhost:2000/checkpost`
+
+    async function fetchbookcar1(){
+        try{
+const res = await fetch(url4)
+const data1 = await res.json()
+
+const cardata = data1[data1.length-1]
+appendcar(cardata)
+
+        }catch(err){
+            console.log(err)
+        }
+
+    }
+fetchbookcar1()
+
+function appendcar(cardata){
+    console.log(cardata)
+
  let name = document.querySelector("#name").textContent = cardata.name
  let carpic = document.querySelector("#carpic")
 carpic.src = cardata.img
@@ -265,7 +287,7 @@ else{
 }
  
 
- 
+}
 
     var checkbox = document.querySelector("#plan")
     var box =document.querySelector("#box")

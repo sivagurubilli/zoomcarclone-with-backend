@@ -7,7 +7,7 @@ function navbar(){
   <div id="right_nav">
       <div onclick = "window.location.href='host.html'">Become a Host</div>
       <div onclick="window.location.href='zms.html'">ZMS</div>
-      <div id="login" ><h3 onclick="window.location.href='num.html'">login/signup</h3><h4 onclick="details()"></h4></div>
+      <div id="login" ><h3 onclick="window.location.href='./zoomcar/num.html'">login/signup</h3></div>
     </div>
   </div>
   <div id="low_nav">

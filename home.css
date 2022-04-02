@@ -134,11 +134,10 @@
     background-position-x: 0px;
     background-position-y: -320px; 
 }
-
 #body{
     width:28%;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 6%;
     font-size: 18px;
 }
 #roundTrip>p>i{
@@ -149,7 +148,7 @@
     color: green;
     background: none;   
 }
-#pickup,#pickoff,#date{
+#pickup,#pickoff{
     height: 60px;
     width: 100%;
     text-align: left;
@@ -177,7 +176,6 @@
     border: none;
     color: rgb(138, 135, 135);
     margin-bottom: 200px;
-    margin-top: 2%;
 }
 #img_box{
     width: 80%;
@@ -327,7 +325,6 @@ i{
     font-size: 14px;
     margin-bottom: 1%;
 }
-
 #about>div>hr{
     margin-bottom: 6%;
     border: 1px solid #e1e1e1;
@@ -345,7 +342,6 @@ i{
     background-color: #fefefe; 
     position: fixed;
     /* background-color: rgba(0,0,0,0.7); */
-
 }
 #back_arrow{
     height: auto;
@@ -440,7 +436,6 @@ i{
     overflow: auto; 
     background-color: #fefefe; 
 }
-
 #continue{
     height: 40px;
     width: 8%;
@@ -448,24 +443,6 @@ i{
     background-color: green;
     margin-right: 20px;
 }
-#sidebar,#logo,#right_nav>div,#sidebarNav>div,#findCar,.trip_div,.trip_img,.close_trip,#about_us,#about_option>div,#currLocation,#location,#img_box>div>img,.refer,#offer_img>img:hover{
+#sidebar,#logo,#right_nav>div,#sidebarNav>div,#findCar,.trip_div,.trip_img,.close_trip,#currLocation,#location,#img_box>div>img,.refer,#offer_img>img:hover{
     cursor: pointer;
-}
-#date{
-    display: none;
-    margin: auto;
-    margin-top: -10%;
-    font-size: 18px;
-}
-#log{
-    display: none;
-}
-#login{
-    width: 30%;
-    display: flex;
-    /* justify-content: space-between; */
-}
-#login>img{
-    height: 30px;
-    margin-left:1%;
 }

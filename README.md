@@ -1,4 +1,4 @@
-# <span style="color:red"> Cloning of [Zoomcar](https://www.zoomcar.com/) WEBSITE -(Learning Purpose)</span>
+# <span style="color:red"> Cloning of [Zoomcar](https://www.zoomcar.com/) WEBSITE</span>
 
 # <span style="color:red"> Welcome Here!</span>
 
@@ -221,4 +221,3 @@ Getting  realtime data from the backend and working on it <br>
 We are very thankful for the support of my teammates and instructor for the completion of project in due time. We will look forward to add some feature and functionality which we left in this project for future expansion.
 
 
-# <span style="color:red"> Thank You For Reading </span>

@@ -206,11 +206,11 @@ This entire journey of making the project was awesome. We have learned lots of t
 
  
  # <span style="color:red"> Team members: </span>
-## Tanya Srivstava
-## Anjali priya
-## Shivani sharma
-## Noorish nouman
-## Siva gurubilli
+## 1) Tanya Srivstava
+## 2) Anjali priya
+## 3) Shivani sharma
+## 4) Noorish nouman
+## 5) Siva gurubilli
 
 
 
